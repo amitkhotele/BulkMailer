@@ -1,4 +1,4 @@
-# 📧 Bulk Mailer Chrome Extension (Offline)
+# 📧 Bulk Mailer (Offline)
 
 A privacy-first, fully offline **Chrome Extension** for sending personalized bulk emails using data from a CSV file. Ideal for sending emails with attachments to multiple recipients—perfect for event invites, results, newsletters, and more.
 
