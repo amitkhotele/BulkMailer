@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fullscreen Layout */
+        html, body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f9;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Centered Card */
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        /* Input Fields */
+        .form-group {
+            text-align: left;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+            display: block;
+            margin: 8px 0 4px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border 0.3s ease-in-out;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+            outline: none;
+        }
+
+        textarea {
+            height: 80px;
+            resize: none;
+            background: #f9f9f9;
+        }
+
+        /* Button */
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 12px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* Status Box */
+        #statusBox {
+            display: none;
+            background: #fff;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 100px;
+            overflow-y: auto;
+            font-size: 13px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: gray;
+            padding-top: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>📩 Bulk Mailer</h2>
+
+        <div class="form-group">
+            <label>CSV File:</label>
+            <input type="file" id="csvFile" accept=".csv">
+        </div>
+
+        <div class="form-group">
+            <label>Attachments Folder:</label>
+            <input type="file" id="attachments" multiple webkitdirectory>
+        </div>
+
+        <div class="form-group">
+            <label>Subject:</label>
+            <input type="text" id="subject" placeholder="Enter Email Subject">
+        </div>
+
+        <div class="form-group">
+            <label>Description:</label>
+            <textarea id="emailBody" placeholder="Hello {{name}}, your report is attached."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Sender Email:</label>
+            <input type="email" id="senderEmail" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label>Password/Key:</label>
+            <input type="password" id="senderPassword" placeholder="Enter password/API Key">
+        </div>
+
+        <button id="sendEmails" type="button">🚀 Send Emails</button>
+        
+        <div id="statusBox">
+            <ul id="statusList"></ul>
+        </div>
+    
+        <!-- <div id="popup">
+            <h3>Email Status</h3>
+            <div id="popupStatus"></div>
+            <button onclick="closePopup()">Close</button>
+        </div> -->
+
+        <footer>© 2025 Bulk Mailer | Amit Khotele</footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
